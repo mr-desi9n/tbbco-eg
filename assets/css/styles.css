@@ -2227,3 +2227,91 @@ dialog.lightbox-dialog::backdrop {
   color: var(--color-gray-500);
   font-size: 0.9rem;
 }
+
+/* CEO's Word Section (About Us) */
+.ceo-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-left: 4px solid var(--color-orange);
+  border-radius: var(--radius-md);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 820px) {
+  .ceo-grid {
+    grid-template-columns: 1fr;
+    padding: 1.75rem;
+  }
+}
+
+.ceo-placeholder {
+  aspect-ratio: 4 / 5;
+  min-height: 300px;
+  background-color: var(--color-gray-50);
+  border: 2px dashed var(--color-gray-200);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--color-gray-500);
+}
+
+.ceo-placeholder__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  display: grid;
+  place-items: center;
+  color: var(--color-charcoal);
+}
+
+.ceo-quote {
+  margin: 0;
+}
+
+.ceo-quote__mark {
+  font-family: Georgia, serif;
+  font-size: 3.5rem;
+  line-height: 0.8;
+  color: var(--color-orange);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.ceo-quote__text {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--color-charcoal);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.ceo-quote__author {
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-gray-100);
+}
+
+.ceo-quote__name {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  margin-bottom: 0.15rem;
+}
+
+.ceo-quote__role {
+  font-size: 0.9rem;
+  color: var(--color-orange-hover);
+  font-weight: 600;
+}
