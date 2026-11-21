@@ -498,4 +498,125 @@
     );
     serviceRows.forEach((row) => stackObserver.observe(row));
   }
+
+  /* ------------------------------------------------------------------------
+     9. Homepage Products Horizontal Scroll Carousel
+     ------------------------------------------------------------------------ */
+  document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+    const track = carousel.querySelector('.products-carousel__track');
+    const prevBtn = carousel.querySelector('[data-direction="previous"]');
+    const nextBtn = carousel.querySelector('[data-direction="next"]');
+    const markersNav = carousel.querySelector('.products-carousel__markers');
+    const statusEl = carousel.querySelector('[role="status"]');
+    if (!track || !prevBtn || !nextBtn || !markersNav) return;
+
+    const slides = [...track.children];
+    if (!slides.length) return;
+
+    let currentIdx = 0;
+    let settledIdx = 0;
+    let pendingTarget = null;
+    let rafId = null;
+    let scrollFallbackTimer = null;
+
+    // Build marker dots from data-marker-name
+    const markers = slides.map((slide, idx) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'products-carousel__marker';
+      btn.setAttribute('aria-label', slide.dataset.markerName || `Go to slide ${idx + 1}`);
+      if (idx === 0) btn.setAttribute('aria-current', 'true');
+      btn.addEventListener('click', () => goToSlide(idx));
+      markersNav.append(btn);
+      return btn;
+    });
+
+    const getNearestSlideIndex = () => {
+      const trackLeft = track.scrollLeft;
+      let bestIdx = 0;
+      let bestDist = Infinity;
+      slides.forEach((slide, idx) => {
+        const dist = Math.abs(slide.offsetLeft - trackLeft);
+        if (dist < bestDist) {
+          bestDist = dist;
+          bestIdx = idx;
+        }
+      });
+      return bestIdx;
+    };
+
+    const setActiveMarker = (idx) => {
+      if (idx === currentIdx && markers[idx]?.getAttribute('aria-current') === 'true') return;
+      currentIdx = idx;
+      markers.forEach((m, i) => {
+        if (i === idx) m.setAttribute('aria-current', 'true');
+        else m.removeAttribute('aria-current');
+      });
+    };
+
+    const syncButtons = () => {
+      const atStart = track.scrollLeft <= 4;
+      const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+      const prevHadFocus = document.activeElement === prevBtn;
+      const nextHadFocus = document.activeElement === nextBtn;
+
+      prevBtn.disabled = atStart;
+      nextBtn.disabled = atEnd;
+
+      if (atStart && prevHadFocus && !nextBtn.disabled) nextBtn.focus();
+      if (atEnd && nextHadFocus && !prevBtn.disabled) prevBtn.focus();
+    };
+
+    const goToSlide = (idx) => {
+      const clamped = Math.max(0, Math.min(slides.length - 1, idx));
+      pendingTarget = clamped;
+      setActiveMarker(clamped);
+      const targetLeft = slides[clamped].offsetLeft;
+      track.scrollBy({ left: targetLeft - track.scrollLeft });
+    };
+
+    prevBtn.addEventListener('click', () => {
+      const base = pendingTarget !== null ? pendingTarget : getNearestSlideIndex();
+      goToSlide(base - 1);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      const base = pendingTarget !== null ? pendingTarget : getNearestSlideIndex();
+      goToSlide(base + 1);
+    });
+
+    const onSettle = () => {
+      const idx = getNearestSlideIndex();
+      pendingTarget = null;
+      setActiveMarker(idx);
+      syncButtons();
+      if (idx !== settledIdx) {
+        settledIdx = idx;
+        if (statusEl) {
+          statusEl.textContent = `Slide ${idx + 1} of ${slides.length}`;
+        }
+      }
+    };
+
+    track.addEventListener('scroll', () => {
+      if (pendingTarget === null && rafId === null) {
+        rafId = requestAnimationFrame(() => {
+          rafId = null;
+          setActiveMarker(getNearestSlideIndex());
+          syncButtons();
+        });
+      }
+      if (!('onscrollend' in window)) {
+        clearTimeout(scrollFallbackTimer);
+        scrollFallbackTimer = setTimeout(onSettle, 120);
+      }
+    });
+
+    if ('onscrollend' in window) {
+      track.addEventListener('scrollend', onSettle);
+    }
+
+    window.addEventListener('resize', syncButtons);
+    syncButtons();
+  });
 })();
