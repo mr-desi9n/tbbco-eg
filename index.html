@@ -6,6 +6,7 @@
   <title>Home - TABBCO | STRACAU Valves Egypt &amp; TBO Stainless Steel Products</title>
   <meta name="description" content="TABBCO is the exclusive distributor of STRACAU Valves France in Egypt and manufacturer of TBO stainless steel drains and plumbing specialties.">
   <link rel="icon" type="image/png" href="assets/images/tabbco-01.png">
+  <link rel="preload" as="image" href="assets/images/hero-poster.jpg" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
@@ -105,9 +106,13 @@
   <main id="main-content" tabindex="-1">
 
     <section class="hero">
-      <img class="hero__bg" src="assets/images/hero-industrial.jpg" alt="Industrial MEP valves, stainless steel systems, and engineering infrastructure" fetchpriority="high" width="1600" height="900">
+      <video class="hero__bg" autoplay muted loop playsinline preload="metadata" width="1280" height="720" poster="assets/images/hero-poster.jpg" aria-hidden="true">
+        <source src="assets/video/tabbco-hero.mp4" type="video/mp4">
+        <source src="assets/video/tabbco-hero.webm" type="video/webm">
+      </video>
       <div class="hero__overlay" aria-hidden="true"></div>
       <div class="hero__crescent" aria-hidden="true"></div>
+      <button type="button" class="hero__video-toggle" data-hero-video-toggle>Pause Video</button>
 
       <div class="container hero__content">
         <span class="hero__eyebrow">Exclusive Distributor of STRACAU Valves France in Egypt &bull; TBO Brand</span>

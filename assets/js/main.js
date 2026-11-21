@@ -619,4 +619,32 @@
     window.addEventListener('resize', syncButtons);
     syncButtons();
   });
+
+  /* ------------------------------------------------------------------------
+     10. Hero Background Video Pause / Play & Reduced Motion Respect
+     ------------------------------------------------------------------------ */
+  const heroVideo = document.querySelector('.hero video.hero__bg');
+  const heroVideoToggle = document.querySelector('[data-hero-video-toggle]');
+  if (heroVideo && heroVideoToggle) {
+    const updateToggleLabel = () => {
+      heroVideoToggle.textContent = heroVideo.paused ? 'Play Video' : 'Pause Video';
+    };
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      heroVideo.pause();
+      heroVideo.removeAttribute('autoplay');
+    }
+    updateToggleLabel();
+
+    heroVideoToggle.addEventListener('click', () => {
+      if (heroVideo.paused) {
+        heroVideo.play().catch(() => {});
+      } else {
+        heroVideo.pause();
+      }
+    });
+
+    heroVideo.addEventListener('play', updateToggleLabel);
+    heroVideo.addEventListener('pause', updateToggleLabel);
+  }
 })();
