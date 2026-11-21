@@ -3,7 +3,6 @@
   <url><loc>https://tabbco-eg.com/</loc></url>
   <url><loc>https://tabbco-eg.com/products.html</loc></url>
   <url><loc>https://tabbco-eg.com/projects.html</loc></url>
-  <url><loc>https://tabbco-eg.com/services.html</loc></url>
   <url><loc>https://tabbco-eg.com/about.html</loc></url>
   <url><loc>https://tabbco-eg.com/contact.html</loc></url>
   <url><loc>https://tabbco-eg.com/products/hvac-valves.html</loc></url>
@@ -11,4 +10,77 @@
   <url><loc>https://tabbco-eg.com/products/plumbing-valves.html</loc></url>
   <url><loc>https://tabbco-eg.com/products/stainless-steel-products.html</loc></url>
   <url><loc>https://tabbco-eg.com/products/plumbing-specialties.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/gate-valves-nrs-rubber-seated.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/bronze-gate-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/bronze-check-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/y-strainer-flanged.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/y-strainer-threaded.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/bronze-ball-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/brass-automatic-air-vent-aav.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/automatic-air-vent-aav.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/balancing-valve-flanged.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/balancing-valve-threaded.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/2-way-control-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/rs-gate-valve-metal-seated.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/swing-check-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/foot-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/float-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/nrs-gate-valve-metal-seated.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/globe-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/lug-butterfly-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/semi-lug-butterfly-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/bronze-foot-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/ball-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/hvac-valves/pressure-reducing-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/firefighting-valves/osandy-gate-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/firefighting-valves/nrs-gate-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/firefighting-valves/swing-check-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/firefighting-valves/alarm-check-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/firefighting-valves/check-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/firefighting-valves/grooved-butterfly-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/firefighting-valves/pendent-sprinkler-str-k-factor-5-6.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/firefighting-valves/upright-sprinkler-str-k-factor-5-6.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/firefighting-valves/pendent-sprinklers-qr-k-factor-5-6.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/firefighting-valves/sprinkler-cabinet.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/firefighting-valves/flow-switch.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/firefighting-valves/side-wall-sprinkler-qr-k-factor-5-6.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-valves/gate-valves-nrs-rubber-seated.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-valves/bronze-gate-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-valves/bronze-check-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-valves/y-strainer-flanged.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-valves/y-strainer-threaded.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-valves/bronze-ball-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-valves/brass-automatic-air-vent-aav.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-valves/automatic-air-vent-aav.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-valves/rs-gate-valve-metal-seated.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-valves/swing-check-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-valves/foot-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-valves/float-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-valves/nrs-gate-valve-metal-seated.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-valves/lug-butterfly-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-valves/semi-lug-butterfly-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-valves/bronze-foot-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-valves/ball-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-valves/pressure-reducing-valve.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/stainless-steel-products/stainless-steel-floor-drains.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/stainless-steel-products/stainless-steel-slot-drains.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/stainless-steel-products/stainless-steel-trench-drains.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/stainless-steel-products/stainless-steel-modular-slot-drain.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/stainless-steel-products/area-drain.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/stainless-steel-products/thermowell.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-specialties/scupper-roof-drain.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-specialties/roof-drain.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-specialties/floor-drain.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-specialties/funnel-floor-drain.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-specialties/garage-drain.html</loc></url>
+  <url><loc>https://tabbco-eg.com/products/plumbing-specialties/wall-clean-out.html</loc></url>
+  <url><loc>https://tabbco-eg.com/projects/ministries-avenue-new-capital.html</loc></url>
+  <url><loc>https://tabbco-eg.com/projects/new-capital-airport-egypt.html</loc></url>
+  <url><loc>https://tabbco-eg.com/projects/cbd-cuc-e-09-building-new-capital.html</loc></url>
+  <url><loc>https://tabbco-eg.com/projects/dorrat-elkaraz-compound-new-cairo.html</loc></url>
+  <url><loc>https://tabbco-eg.com/projects/cbd-offices-towers-c11-c12.html</loc></url>
+  <url><loc>https://tabbco-eg.com/projects/sports-city-project-new-capital.html</loc></url>
+  <url><loc>https://tabbco-eg.com/projects/cbd-residential-towers-d1-d2-d3.html</loc></url>
+  <url><loc>https://tabbco-eg.com/projects/cbd-iconic-tower-landscape-package-18.html</loc></url>
+  <url><loc>https://tabbco-eg.com/projects/cbd-towers-c07-c08.html</loc></url>
 </urlset>

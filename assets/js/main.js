@@ -414,4 +414,75 @@
       }, 350);
     });
   }
+
+  /* ------------------------------------------------------------------------
+     7. Fullscreen Product Image Lightbox (<dialog closedby="any"> + fallback)
+     ------------------------------------------------------------------------ */
+  const lightboxTriggers = document.querySelectorAll('[data-lightbox-src]');
+  if (lightboxTriggers.length) {
+    const lightbox = document.createElement('dialog');
+    lightbox.id = 'image-lightbox';
+    lightbox.className = 'lightbox-dialog';
+    lightbox.setAttribute('closedby', 'any');
+    lightbox.setAttribute('aria-labelledby', 'lightbox-caption');
+    lightbox.innerHTML = `
+      <div class="lightbox-dialog__frame">
+        <img class="lightbox-dialog__img" src="" alt="">
+        <div class="lightbox-dialog__bar">
+          <p id="lightbox-caption" class="lightbox-dialog__caption"></p>
+          <form method="dialog">
+            <button type="submit" class="btn btn--dark btn--sm" autofocus>Close</button>
+          </form>
+        </div>
+      </div>
+    `;
+    document.body.append(lightbox);
+
+    const lbImg = lightbox.querySelector('.lightbox-dialog__img');
+    const lbCaption = lightbox.querySelector('#lightbox-caption');
+
+    lightboxTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const src = trigger.dataset.lightboxSrc;
+        const alt = trigger.dataset.lightboxAlt || 'Product image';
+        if (!src || !lbImg || !lbCaption) return;
+        lbImg.src = src;
+        lbImg.alt = alt;
+        lbCaption.textContent = alt;
+        lightbox.showModal();
+      });
+    });
+
+    lightbox.addEventListener('close', () => {
+      lightbox.returnValue = '';
+    });
+
+    if (!('closedBy' in HTMLDialogElement.prototype)) {
+      const outside = (e, dlg) => {
+        const r = dlg.getBoundingClientRect();
+        return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+      };
+      let pressedOutside = false;
+      lightbox.addEventListener('pointerdown', (e) => {
+        pressedOutside = outside(e, lightbox);
+      });
+      lightbox.addEventListener('pointerup', (e) => {
+        if (pressedOutside && outside(e, lightbox)) {
+          lightbox.close();
+        }
+      });
+    }
+  }
+
+  /* ------------------------------------------------------------------------
+     8. Partners of Success Marquee Pause / Play Control
+     ------------------------------------------------------------------------ */
+  const marqueeToggle = document.querySelector('[data-marquee-toggle]');
+  const marqueeWrap = document.querySelector('.partners-marquee-wrap');
+  if (marqueeToggle && marqueeWrap) {
+    marqueeToggle.addEventListener('click', () => {
+      const paused = marqueeWrap.classList.toggle('is-paused');
+      marqueeToggle.textContent = paused ? 'Play Partners Scroll' : 'Pause Partners Scroll';
+    });
+  }
 })();
