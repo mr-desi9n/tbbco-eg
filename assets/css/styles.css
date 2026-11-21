@@ -1848,6 +1848,11 @@ textarea.form-control {
   display: block;
 }
 
+.card__brand-badge ~ .card__tag {
+  left: auto;
+  right: 0.875rem;
+}
+
 /* Clickable Fullscreen Image Trigger & Native Dialog Lightbox */
 .lightbox-trigger {
   position: relative;
