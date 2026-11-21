@@ -475,14 +475,27 @@
   }
 
   /* ------------------------------------------------------------------------
-     8. Partners of Success Marquee Pause / Play Control
+     8. Scroll-Driven Services Card Stacking Fallback (Non-view()-timeline browsers)
      ------------------------------------------------------------------------ */
-  const marqueeToggle = document.querySelector('[data-marquee-toggle]');
-  const marqueeWrap = document.querySelector('.partners-marquee-wrap');
-  if (marqueeToggle && marqueeWrap) {
-    marqueeToggle.addEventListener('click', () => {
-      const paused = marqueeWrap.classList.toggle('is-paused');
-      marqueeToggle.textContent = paused ? 'Play Partners Scroll' : 'Pause Partners Scroll';
-    });
+  const serviceRows = document.querySelectorAll('.services-showcase .service-row');
+  if (
+    serviceRows.length &&
+    !CSS.supports('(animation-timeline: view()) and (animation-range: entry)') &&
+    window.matchMedia('(prefers-reduced-motion: no-preference)').matches &&
+    'IntersectionObserver' in window
+  ) {
+    const stackObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const ratio = Math.min(1, Math.max(0, entry.intersectionRatio));
+          const scale = 0.94 + ratio * 0.06;
+          const opacity = 0.55 + ratio * 0.45;
+          entry.target.style.transform = `scale(${scale.toFixed(3)})`;
+          entry.target.style.opacity = opacity.toFixed(3);
+        });
+      },
+      { threshold: Array.from({ length: 21 }, (_, i) => i / 20) }
+    );
+    serviceRows.forEach((row) => stackObserver.observe(row));
   }
 })();
